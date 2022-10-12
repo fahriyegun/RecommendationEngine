@@ -145,26 +145,52 @@ This is an **XUnit** test project. In this project, APIs written for ETL, Stream
 
 ## Docker
 
-I wrote Docker Compose to install and deploy in a Docker container. However, after I installed the SQL Server I installed for the project, the script I wrote to create an automatic database did not work, so I could not restore the project with docker compose. The dockerfile of the project and the docker-compose file containing all the installations are also attached.
+I couldn't write a docker-compose that works 100% correctly. But with this file, I created a docker-compose that can connect to rabbitmq, postgresql and sqlserver, and can stand up restapi if it passes unittests. If you want to start the project with this file, you should do the following:
+* Clone this project to your local machine.
 
-If the docker-compose.yml file worked, it would be necessary to install the Docker and Docker Compose into your computer. Following commands would setup a RabbitMq, PostgreSQL and Microsoft SQL Server.
+```
+git clone https://github.com/fahriyegun/RecommendationEngine.git
+```
 
-To setup databases, you should run following command:
+
+* start docker-compose file.
+
+```
 docker-compose -f ./docker-compose.yml up -d
+```
+
+* After making sure that the connection to the master is provided in sqlserver, the following script is run.
+
+```
+CREATE DATABASE RecommendationDb
+```
+
+* In the project that stands up in visual studio, the package manager console comes and the migration is run.
+
+```
+update-database
+```
+
+To setup, you should run following command:
+```
+docker-compose -f ./docker-compose.yml up -d
+```
 
 To tear down, you should run following command:
+```
 docker-compose -f ./docker-compose.yml down
+```
 
 After setup is completed;
-⦁	You can access RabbitMQ from port 15672 on your localhost. Credentials are:
-⦁	Username: guest
-⦁	Password: guest
+* You can access RabbitMQ from port 15672 on your localhost. Credentials are:
+- Username: guest
+- Password: guest
 
-⦁	You can access PostgreSQL from port 5432 on your localhost. Credentials are:
-⦁	Username: postgres
-⦁	Password: 123456
+*	You can access PostgreSQL from port 5432 on your localhost. Credentials are:
+-	Username: postgres
+-	Password: 123456
 
-⦁	You can access Microsoft SQL Server from port 1433 on your localhost. Credentials are:
-⦁	Username: sa
-⦁	Password: Password1!
+*	You can access Microsoft SQL Server from port 1433 on your localhost. Credentials are:
+-	Username: sa
+-	Password: Password1!
 
