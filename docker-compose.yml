@@ -1,0 +1,39 @@
+---
+version: '2'
+services:
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    container_name: 'rabbitmqContainer'
+    ports:
+        - 5672:5672
+        - 15672:15672        
+    networks:
+        - rabbitmq_go_net
+        
+  postgres:
+    image: hepsiburada/postgres:13.1-case
+    ports:
+      - "5432:5432"
+    environment:
+      - PGDATA=postgres
+      
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    ports:
+        - 1433:1433
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=Password1!  
+    
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5001:5001
+    depends_on:
+      - sqlserver
+      
+networks:  
+  rabbitmq_go_net:
+    driver: bridge    

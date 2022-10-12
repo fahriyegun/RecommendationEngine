@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Recommendation.API.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
