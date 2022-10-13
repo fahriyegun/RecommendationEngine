@@ -58,7 +58,7 @@ This project was written in ***.NET6***. This project uses a number of open sour
 * **Microsoft SQL Server**: SQL server was raised as the project db and a new db was created.
 * **Docker** : used to set up the project and its dependencies.
 
-![](C:\Users\fahriye.cankaya\source\repos\Assignment\img\Workflow.PNG)
+![](https://github.com/fahriyegun/RecommendationEngine/blob/master/img/Workflow.PNG)
 
 
 
@@ -80,7 +80,7 @@ This rest api project allows the whole system to do its work. Here, we first cre
 
 * Products, Orders, OrderItems, Histories
 
-  ![image-20221011170014747](C:\Users\fahriye.cankaya\AppData\Roaming\Typora\typora-user-images\image-20221011170014747.png)
+  ![image-20221011170014747](https://github.com/fahriyegun/RecommendationEngine/blob/master/img/image-20221011170014747.png)
 
   
 
@@ -90,7 +90,7 @@ This rest api project allows the whole system to do its work. Here, we first cre
 
 * GET and DELETE methods are the desired custom APIs.
 
-![](C:\Users\fahriye.cankaya\source\repos\Assignment\img\ALL API.PNG)
+![](https://github.com/fahriyegun/RecommendationEngine/blob/master/img/ALL%20API.PNG)
 
 
 
@@ -115,7 +115,7 @@ Scaffold-DbContext “Host=localhost;Database=data-db;Username=postgres;Password
 
 Afterwards, the project database was fed by sending all the data of Product, Order and OrderItem to the post services in Recommendation.API on a record basis. Here, the reason for sending record-based data is checked whether it is in the db from the same record, otherwise it is created.
 
-![](C:\Users\fahriye.cankaya\source\repos\Assignment\img\etl.PNG)
+![](https://github.com/fahriyegun/RecommendationEngine/blob/master/img/etl.PNG)
 
 
 
@@ -131,7 +131,7 @@ This is a console application. In this project, it connects to RabbitMq and crea
 
 This is a console application. In this project, it connects to RabbitMq, reads the pending messages, sends it to the post history method in Recommendation.API, and feeds the project db.
 
-![](C:\Users\fahriye.cankaya\source\repos\Assignment\img\consumer.PNG)
+![](https://github.com/fahriyegun/RecommendationEngine/blob/master/img/publisher.PNG)
 
 
 
@@ -139,7 +139,7 @@ This is a console application. In this project, it connects to RabbitMq, reads t
 
 This is an **XUnit** test project. In this project, APIs written for ETL, StreamReader and unit test cases were written for custom APIs. I used **SQLite** for testing EFCore.
 
-![image-20221011165224963](C:\Users\fahriye.cankaya\AppData\Roaming\Typora\typora-user-images\image-20221011165224963.png)
+![image-20221011165224963](https://github.com/fahriyegun/RecommendationEngine/blob/master/img/unittest.PNG)
 
 
 
