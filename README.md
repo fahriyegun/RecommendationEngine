@@ -123,7 +123,7 @@ Afterwards, the project database was fed by sending all the data of Product, Ord
 
 This is a console application. In this project, it connects to RabbitMq and creates a queue, reads the attached product-views.json file line by line and sends a message to the queue.
 
-![](C:\Users\fahriye.cankaya\source\repos\Assignment\img\publisher.PNG)
+![](https://github.com/fahriyegun/RecommendationEngine/blob/master/img/publisher.PNG)
 
 
 
